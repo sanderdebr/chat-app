@@ -39,6 +39,6 @@ io.on('connection', (socket) => {
 
     // listen on typing
     socket.on('typing', (data) => {
-        socket.broadcast.emit('typing', {username: socket.username, message: data.message})
+        socket.broadcast.emit('typing', {username: socket.username})
     })
 })
