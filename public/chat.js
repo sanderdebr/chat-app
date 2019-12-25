@@ -1,6 +1,9 @@
 $(function(){
     // make connection
-    var socket = io.connect('http://localhost:3000')
+
+    var port = process.env.PORT || 8080;
+
+    var socket = io.connect(`http://localhost:${port}`)
 
     //buttons and input
     var message = $("#message");
