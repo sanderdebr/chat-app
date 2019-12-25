@@ -3,7 +3,7 @@ $(function(){
 
     // var port = process.env.PORT || 8080;
 
-    var socket = io.connect(`http://localhost`)
+    var socket = io.connect();
 
     //buttons and input
     var message = $("#message");
