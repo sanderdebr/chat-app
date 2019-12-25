@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
     res.render("index")
 })
 
-// listen on port 3000
-server = app.listen(3000);
+// listen on port
+var port = process.env.PORT || 8080;
+server = app.listen(port);
 
 //socket.io instantiation
 const io = require('socket.io')(server);
