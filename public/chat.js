@@ -1,9 +1,8 @@
 $(function(){
     // make connection
 
-    // var port = process.env.PORT || 8080;
-
     var socket = io.connect(window.location.hostname);
+    // var socket = io.connect('localhost:8080');
 
     //buttons and input
     var message = $("#message");
@@ -29,13 +28,17 @@ $(function(){
     })
 
     //Emit typing
-	message.bind("keypress", () => {
-		socket.emit('typing')
-	})
+	message.keyup(function () {
+        if (message.val().length > 0){
+            socket.emit('typing')
+        } else {
+            feedback.html("");
+        }
+    });
 
 	//Listen on typing
 	socket.on('typing', (data) => {
 		feedback.html("<p><i>" + data.username + " is typing a message..." + "</i></p>")
-	})
+    })
 
 });
