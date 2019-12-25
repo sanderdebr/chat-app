@@ -3,7 +3,7 @@ $(function(){
 
     // var port = process.env.PORT || 8080;
 
-    var socket = io.connect(`https://calm-beyond-92166.herokuapp.com/`)
+    var socket = io.connect(`http://localhost`)
 
     //buttons and input
     var message = $("#message");
