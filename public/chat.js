@@ -1,7 +1,7 @@
+var port = process.env.PORT || 8080;
+
 $(function(){
     // make connection
-
-    var port = process.env.PORT || 8080;
 
     var socket = io.connect(`http://localhost:${port}`)
 
